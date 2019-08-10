@@ -46,5 +46,9 @@ def create_app ( test_config=None ):
 	# Initializes the app
 	db.init_app( app )
 
+	# registers new users 
+	from . import auth
+	app.register_blueprint( auth.bp )
+
 	return app
 
